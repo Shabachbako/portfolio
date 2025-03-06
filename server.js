@@ -9,32 +9,32 @@ const PORT = process.env.PORT || 5001;
 // Middleware
 app.use(express.json()); // Parse JSON request bodies
 
-// Configure CORS to allow requests from frontend (localhost:5173)
+// ✅ Configure CORS to allow requests from both localhost and Netlify
 app.use(
   cors({
-    origin: "http://localhost:5173", // Adjust this if the frontend is deployed elsewhere
+    origin: ["http://localhost:5173", "https://kcezeportfolio.netlify.app"], // ✅ Add your live frontend URL here
     methods: "GET, POST",
     allowedHeaders: "Content-Type",
   })
 );
 
-// Nodemailer Transporter Setup
+// ✅ Nodemailer Transporter Setup
 const transporter = nodemailer.createTransport({
-  service: "gmail", // You can change this to another email provider
+  service: "gmail", // Change if using another provider
   auth: {
     user: process.env.EMAIL_USER, // Your email (stored in .env)
     pass: process.env.EMAIL_PASS, // Your email password or app password (stored in .env)
   },
 });
 
-// Contact Form Endpoint
+// ✅ Contact Form Endpoint
 app.post("/send", async (req, res) => {
   const { firstName, lastName, email, phone, message } = req.body;
 
-  // Email to Admin (You and Kelechi)
+  // ✅ Email to Admin (You and Kelechi)
   const adminMailOptions = {
-    from: process.env.EMAIL_USER, // Your email
-    to: `${process.env.EMAIL_USER}, kelechieze2000@gmail.com`, // Both admin emails
+    from: process.env.EMAIL_USER,
+    to: `${process.env.EMAIL_USER}, kelechieze2000@gmail.com`, // Sends to both admins
     subject: "Someone Wants A Website Done!",
     html: `
       <div style="font-family: Arial, sans-serif; padding: 20px; color: #333;">
@@ -49,10 +49,10 @@ app.post("/send", async (req, res) => {
     `,
   };
 
-  // Auto-Response Email to User
+  // ✅ Auto-Response Email to User
   const userMailOptions = {
-    from: `"Kelechi Eze" <${process.env.EMAIL_USER}>`, // Your email
-    to: email, // User's email
+    from: `"Kelechi Eze" <${process.env.EMAIL_USER}>`,
+    to: email,
     subject: "Thank You for Contacting Me!",
     html: `
       <div style="font-family: Arial, sans-serif; padding: 20px; text-align: center; color: #333;">
@@ -74,20 +74,21 @@ app.post("/send", async (req, res) => {
   };
 
   try {
-    // Send email to Admin
+    // ✅ Send emails
     await transporter.sendMail(adminMailOptions);
-
-    // Send auto-response to User
     await transporter.sendMail(userMailOptions);
 
     res.status(200).json({ message: "Message sent successfully!" });
   } catch (error) {
-    console.error("Error sending email:", error);
-    res.status(500).json({ message: "Failed to send message" });
+    console.error("🚨 Error sending email:", error);
+    res.status(500).json({
+      message: "Failed to send message",
+      error: error.message, // More helpful error logging
+    });
   }
 });
 
-// Start Server
+// ✅ Start Server
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`🚀 Server running on port ${PORT}`);
 });
