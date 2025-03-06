@@ -1,0 +1,206 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Skills Section */
+.skills {
+  text-align: center;
+  padding: 50px 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.skills-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #5a1ea7;
+}
+
+.highlight {
+  color: #5a1ea7;
+}
+
+.skills-description {
+  font-size: 0.8rem;
+  color: #555;
+  max-width: 600px;
+  margin: 10px auto 30px;
+}
+
+/* Container with slight fade-in animation */
+.skills-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in-out forwards 0.5s;
+}
+
+/* Skill Cards */
+.skill-card {
+  background: rgba(220, 220, 255, 0.3);
+  padding: 20px;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  position: relative;
+  opacity: 0;
+  animation: slideIn 1s ease-in-out forwards;
+}
+
+/* Hover Effect: Bounce & Color Change */
+.skill-card:hover {
+  background: #2c115d;
+  transform: translateY(-5px) scale(1.05);
+  animation: bounce 0.5s ease-in-out;
+}
+
+/* Adjust Icon Position */
+.skill-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+  animation: floatIcon 3s infinite ease-in-out;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect: Shake Icon */
+.skill-card:hover .skill-icon {
+  transform: scale(1.1);
+  animation: shake 0.3s ease-in-out;
+}
+
+/* Text inside the card */
+.skill-percentage {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Skill Name Below the Card */
+.skill-name {
+  font-size: 1rem;
+  color: #5a1ea7;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Hover Effect: Change Text Color */
+.skill-card:hover .skill-percentage {
+  color: white;
+}
+
+/* ✨ Fade-in Slide-up Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ✨ Fade-in Effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ✨ Slide-in Effect for Skill Cards */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ✨ Floating Animation for Icons */
+@keyframes floatIcon {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* ✨ Bounce Effect on Hover */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* ✨ Shake Effect on Hover */
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+  75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* 📱 Mobile Responsive */
+@media screen and (max-width: 375px) {
+  .skills {
+    text-align: left;
+    padding: 30px 5%;
+  }
+
+  .skills-title {
+    font-size: 1.8rem;
+  }
+
+  .skills-description {
+    font-size: 0.9rem;
+    max-width: 90%;
+  }
+
+  .skills-container {
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+  }
+
+  .skill-card {
+    width: 100px;
+    height: 100px;
+    padding: 15px;
+    animation: slideIn 1s ease-in-out forwards;
+  }
+
+  .skill-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 12px;
+    animation: floatIcon 3s infinite ease-in-out;
+  }
+
+  .skill-percentage {
+    font-size: 1rem;
+  }
+
+  .skill-name {
+    font-size: 0.9rem;
+    margin-top: 8px;
+  }
+}

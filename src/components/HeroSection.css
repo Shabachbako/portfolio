@@ -1,0 +1,130 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4efff; /* Light purple background */
+  padding: 20px;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  max-width: 1000px;
+  width: 100%;
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Left Side - Image */
+.hero-image {
+  flex: 1;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 20px;
+}
+
+/* Right Side - Content */
+.hero-content {
+  flex: 2;
+  padding-left: 40px;
+  text-align: left; /* Ensure left alignment */
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #5b3cc4; /* Purple color */
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Call to Action Button */
+.hire-button {
+  background-color: #7d4cff;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  display: inline-block;
+}
+
+.hire-button:hover {
+  background-color: #5b3cc4;
+}
+
+/* Social Icons */
+.social-icons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  text-decoration: none;
+  color: #5b3cc4;
+  font-size: 22px;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  animation: bounce 1.5s infinite ease-in-out;
+}
+
+.social-icons a:hover {
+  color: #7d4cff;
+  transform: scale(1.2);
+}
+
+/* Bouncing Animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    align-items: flex-start; /* Align content to the left */
+    text-align: left; /* Ensure left alignment */
+    padding: 20px;
+  }
+
+  .hero-content {
+    padding-left: 0;
+    padding-top: 20px;
+  }
+
+  .hero-image img {
+    max-width: 180px;
+    margin-top: 60px;
+  }
+
+  .hire-button {
+    margin-left: 0; /* Align button to the left */
+  }
+
+  .social-icons {
+    justify-content: flex-start; /* Move icons slightly to the right */
+    margin-left: 10px;
+  }
+}

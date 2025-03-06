@@ -1,0 +1,209 @@
+/* Navbar Container */
+.navbar {
+  width: 100%;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 12px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Ensure navbar is always visible */
+.navbar.show {
+  transform: translateY(0);
+}
+
+/* Navbar Flexbox */
+.navbar-container {
+  max-width: 996px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  opacity: 1; /* Ensure visibility */
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Logo & Email */
+.logo-email {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.email {
+  font-size: 16px;
+  color: #2c1e53;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.email:hover {
+  color: #8254ff;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-links li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #2c1e53;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+  position: relative;
+}
+
+.nav-links li a:hover {
+  color: #8254ff;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background-color: #8254ff;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* Resume Button (Desktop) */
+.resume-button {
+  background: #8254ff;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.3s ease-in-out, background 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.resume-button:hover {
+  background: #6b40e3;
+  transform: scale(1.05);
+}
+
+/* Hamburger Menu (Mobile) */
+.menu-icon {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #2c1e53;
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu-icon:hover {
+  transform: rotate(180deg);
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+  .navbar-container {
+      padding: 0 15px;
+  }
+
+  /* Hide Desktop Links */
+  .nav-links {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background: white;
+      width: 100%;
+      flex-direction: column;
+      display: none;
+      text-align: left;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      padding: 10px 20px;
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+  }
+
+  .nav-links.open {
+      display: flex;
+      opacity: 1;
+      transform: translateY(0);
+  }
+
+  .nav-links li {
+      padding: 10px 0;
+  }
+
+  /* Show Hamburger Menu */
+  .menu-icon {
+      display: block;
+  }
+
+  /* Mobile Resume Button (Visible Only in Mobile Menu) */
+  .mobile-resume {
+      display: block;
+      margin-top: 10px;
+  }
+
+  .mobile-resume-button {
+      display: block;
+      text-align: left;
+      padding: 10px 15px;
+      width: fit-content;
+      background: #8254ff;
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+  }
+
+  .mobile-resume-button:hover {
+      background: #6b40e3;
+      transform: scale(1.05);
+  }
+
+  /* Hide Desktop Resume Button on Mobile */
+  .resume-button {
+      display: none;
+  }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}

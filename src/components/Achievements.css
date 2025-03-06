@@ -1,0 +1,124 @@
+/* Achievements Section */
+.achievements {
+    width: 95%;
+    background-color: #f4efff;
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+  }
+  
+  .achievements-container {
+    display: flex;
+    max-width: 1000px;
+    width: 100%;
+    gap: 40px;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Left Text Content */
+  .achievements-text {
+    flex: 1.5;
+  }
+  
+  .achievements-text h2 {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: #5b3cc4;
+    margin-bottom: 15px;
+  }
+  
+  .highlight {
+    color: #8254ff;
+  }
+  
+  .achievements-text p {
+    font-size: 0.8rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Contact Button */
+  .contact-btn {
+    background-color: #7d4cff;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .contact-btn:hover {
+    background-color: #5b3cc4;
+  }
+  
+  /* Right Card Content */
+  .achievements-card {
+    flex: 1;
+    background-color: #f4efff;
+    padding: 20px;
+    border-radius: 20px;
+  }
+  
+  .achievements-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #5b3cc4;
+    margin-bottom: 10px;
+  }
+  
+  .achievements-card p {
+    font-size: 0.8rem;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  /* Image */
+  .design-image {
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin-top: 10px;
+  }
+  
+  /* 📱 Mobile Responsive */
+  @media (max-width: 768px) {
+    .achievements {
+        width: 90%;
+    }
+
+    .achievements-container {
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      padding: 20px;
+    }
+  
+    .achievements-text {
+      width: 100%;
+    }
+  
+    .achievements-text h2 {
+      font-size: 1.8rem;
+    }
+  
+    .contact-btn {
+      margin-left: 0;
+    }
+  
+    .achievements-card {
+      width: 90%;
+      text-align: left;
+    }
+  
+    .design-image {
+      max-width: 250px;
+      margin-top: 20px;
+    }
+  }
+  

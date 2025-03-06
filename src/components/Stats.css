@@ -1,0 +1,128 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Stats Section */
+.stats {
+  width: 96%;
+  background: #f7f3ff;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+/* Stats Container */
+.stats-container {
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+/* Individual Stat Item */
+.stat-item {
+  text-align: center;
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  flex: 1;
+  min-width: 120px;
+  max-width: 200px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Add glowing effect on hover */
+.stat-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(130, 84, 255, 0.2);
+}
+
+/* Icon Styling */
+.stat-icon {
+  font-size: 28px;
+  color: #8254ff;
+  margin-bottom: 8px;
+  display: inline-block;
+  animation: floatIcon 3s infinite ease-in-out;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Icon Hover Effect */
+.stat-item:hover .stat-icon {
+  transform: scale(1.2);
+  color: #6b40e3;
+}
+
+/* Value Styling */
+.stat-value {
+  font-size: 28px;
+  font-weight: bold;
+  color: #8254ff;
+  margin: 5px 0;
+}
+
+/* Label Styling */
+.stat-label {
+  font-size: 13px;
+  color: #6a6a6a;
+}
+
+/* Floating Animation for Icons */
+@keyframes floatIcon {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Fade-in Slide-up Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+  .stats {
+    width: 90%;
+    text-align: left;
+  }
+
+  .stats-container {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 20px;
+  }
+
+  .stat-item {
+    width: 80%;
+    max-width: 320px;
+    text-align: left;
+    padding: 12px;
+    border-radius: 8px;
+  }
+
+  .stat-value {
+    font-size: 24px;
+  }
+
+  .stat-label {
+    font-size: 12px;
+  }
+}
