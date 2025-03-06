@@ -1,8 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import "./ContactForm.css";
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 
 const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const [status, setStatus] = useState("");
+
+  // Handle Input Changes
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // Handle Form Submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("Sending...");
+
+    try {
+      const response = await axios.post("http://localhost:5001/send", formData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      setStatus(response.data.message);
+      setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" }); // Reset form
+    } catch (error) {
+      console.error("Error sending message:", error);
+      setStatus("Failed to send message. Please try again.");
+    }
+  };
+
   return (
     <div className="contact-section">
       <div className="contact-container">
@@ -14,25 +49,29 @@ const ContactForm = () => {
           <p className="contact-description">
             I design and code beautifully simple things, and I love what I do. Just simple like that!
           </p>
-          <form>
-            <input type="text" placeholder="First name" required />
-            <input type="text" placeholder="Last name" required />
-            <input type="email" placeholder="Email address" required />
-            <input type="tel" placeholder="Phone number" required />
-            <textarea placeholder="Message" rows="4" required></textarea>
+
+          <form onSubmit={handleSubmit}>
+            <input type="text" name="firstName" placeholder="First name" required value={formData.firstName} onChange={handleChange} style={{ color: "black" }} />
+            <input type="text" name="lastName" placeholder="Last name" required value={formData.lastName} onChange={handleChange} style={{ color: "black" }} />
+            <input type="email" name="email" placeholder="Email address" required value={formData.email} onChange={handleChange} style={{ color: "black" }} />
+            <input type="tel" name="phone" placeholder="Phone number" required value={formData.phone} onChange={handleChange} style={{ color: "black" }} />
+            <textarea name="message" placeholder="What's The Job" rows="4" required value={formData.message} onChange={handleChange} style={{ color: "black" }}></textarea>
             <button type="submit" className="send-message-btn">
               Send Message <span className="arrow">↗</span>
             </button>
           </form>
+
+          {/* Status Message */}
+          {status && <p className="status-message">{status}</p>}
         </div>
 
         {/* Right Side - Contact Details */}
         <div className="contact-info">
           <p className="availability">
-            I'm currently available to take on new projects, so feel free to send me a message about anything that you want to run past me. You can contact anytime at 24/7.
+            I'm currently available to take on new projects, so feel free to send me a message. You can contact me anytime, 24/7.
           </p>
           <p className="contact-detail"><a href="tel:+2349166798290">+234 916 679 8290</a></p>
-          <p className="contact-detail"><a href="mailto:gerolddesign@mail.com">kelechieze2000@gmail.com</a></p>
+          <p className="contact-detail"><a href="mailto:kelechieze2000@gmail.com">kelechieze2000@gmail.com</a></p>
           <p className="contact-detail">
             <a href="#">Warne Park Street Pine,<br />FL 33157, New York</a>
           </p>
