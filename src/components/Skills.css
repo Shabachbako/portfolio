@@ -204,3 +204,51 @@
     margin-top: 8px;
   }
 }
+
+/* 📱 Mobile Responsive for 425px Screens */
+@media screen and (max-width: 425px) {
+    .skills {
+      text-align: left;
+      padding: 35px 5%;
+    }
+  
+    .skills-title {
+      font-size: 2rem;
+    }
+  
+    .skills-description {
+      font-size: 1rem;
+      max-width: 95%;
+    }
+  
+    .skills-container {
+      width: 95%;
+      margin: auto;
+      justify-content: center;
+      gap: 15px;
+    }
+  
+    .skill-card {
+      width: 120px;
+      height: 120px;
+      padding: 18px;
+      animation: slideIn 1s ease-in-out forwards;
+    }
+  
+    .skill-icon {
+      width: 45px;
+      height: 45px;
+      margin-bottom: 14px;
+      animation: floatIcon 3s infinite ease-in-out;
+    }
+  
+    .skill-percentage {
+      font-size: 1.1rem;
+    }
+  
+    .skill-name {
+      font-size: 0.95rem;
+      margin-top: 8px;
+    }
+  }
+  
