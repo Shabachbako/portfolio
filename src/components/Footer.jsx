@@ -4,6 +4,13 @@ import { FaArrowUp } from "react-icons/fa";
 import logo from "../assets/logo.png"; // Adjust path as needed
 
 const Footer = () => {
+    const scrollToSection = (id) => {
+        const section = document.getElementById(id);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      };
+
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -14,11 +21,11 @@ const Footer = () => {
 
         {/* Navigation Links */}
         <ul className="footer-nav">
-          <li><a href="#">Meet Me</a></li>
-          <li><a href="#">Works</a></li>
-          <li><a href="#">Achievements</a></li>
-          <li><a href="#">Skills</a></li>
-          <li><a href="#">Contact</a></li>
+        <li><a onClick={() => scrollToSection("hero")}>Meet Me</a></li>
+          <li><a onClick={() => scrollToSection("works")}>Works</a></li>
+          <li><a onClick={() => scrollToSection("achievements")}>Achievements</a></li>
+          <li><a onClick={() => scrollToSection("skills")}>Skills</a></li>
+          <li><a onClick={() => scrollToSection("contact")}>Contact</a></li>
         </ul>
 
         {/* Copyright */}
