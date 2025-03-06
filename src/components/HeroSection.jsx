@@ -1,7 +1,7 @@
 import React from "react";
 import "./HeroSection.css";
 import { FaFacebookF, FaInstagram, FaXTwitter, FaLinkedin } from "react-icons/fa6";
-import ProfileImage from "../assets/profile.png"; // Importing a default image
+import ProfileImage from "../assets/homeimage.png"; // Importing a default image
 
 const HeroSection = () => {
   // Scroll to Contact Section
