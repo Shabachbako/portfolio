@@ -4,14 +4,15 @@ import { FaTrophy, FaBriefcase, FaUsers, FaCrown } from "react-icons/fa";
 
 const Stats = () => {
   const statsData = [
-    { icon: <FaTrophy />, value: 14, suffix: "%", label: "Job Achievements" },
-    { icon: <FaBriefcase />, value: 50, suffix: "+", label: "Years of Experience" },
-    { icon: <FaUsers />, value: 1500, suffix: "", label: "Happy Clients" },
-    { icon: <FaCrown />, value: 50, suffix: "+", label: "Projects Completed" },
+    { icon: <FaTrophy />, value: 70, suffix: "%", label: "Job Achievements" },
+    { icon: <FaBriefcase />, value: 2, suffix: "+", label: "Years of Experience" },
+    { icon: <FaUsers />, value: 10, suffix: "", label: "Happy Clients" },
+    { icon: <FaCrown />, value: 20, suffix: "+", label: "Projects Completed" },
   ];
 
   // State to track animated values
   const [counts, setCounts] = useState(statsData.map(() => 0));
+  const [selectedStat, setSelectedStat] = useState(null);
 
   useEffect(() => {
     const intervals = statsData.map((stat, index) => {
@@ -26,7 +27,6 @@ const Stats = () => {
       }, 30);
     });
 
-    // Clear intervals after animation completes
     setTimeout(() => {
       intervals.forEach((interval) => clearInterval(interval));
     }, 2000);
@@ -38,13 +38,29 @@ const Stats = () => {
     <section className="stats">
       <div className="stats-container">
         {statsData.map((stat, index) => (
-          <div className="stat-item" key={index}>
+          <div 
+            className="stat-item" 
+            key={index} 
+            onClick={() => setSelectedStat(stat)}
+          >
             <div className="stat-icon">{stat.icon}</div>
             <h2 className="stat-value">{counts[index]}{stat.suffix}</h2>
             <p className="stat-label">{stat.label}</p>
           </div>
         ))}
       </div>
+
+      {/* Modal for displaying clicked stat */}
+      {selectedStat && (
+        <div className="modal-overlay" onClick={() => setSelectedStat(null)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <span className="close-button" onClick={() => setSelectedStat(null)}>×</span>
+            <div className="modal-icon">{selectedStat.icon}</div>
+            <h2 className="modal-value">{selectedStat.value}{selectedStat.suffix}</h2>
+            <p className="modal-label">{selectedStat.label}</p>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

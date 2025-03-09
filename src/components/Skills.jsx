@@ -3,19 +3,19 @@ import "./Skills.css";
 
 // Import skill images
 import figmaIcon from "../assets/figma.png";
-import sketchIcon from "../assets/sketch.jpg";
-import xdIcon from "../assets/xd.jpg";
+import sketchIcon from "../assets/html.png";
+import xdIcon from "../assets/css.png";
 import wordpressIcon from "../assets/wp.jpg";
 import reactIcon from "../assets/react.jpg";
 import javascriptIcon from "../assets/js.jpg";
 
 const skillsData = [
-  { name: "Figma", image: figmaIcon, percentage: "92%" },
-  { name: "Sketch", image: sketchIcon, percentage: "80%" },
-  { name: "XD", image: xdIcon, percentage: "85%", highlight: true },
-  { name: "WordPress", image: wordpressIcon, percentage: "99%" },
-  { name: "React", image: reactIcon, percentage: "89%" },
-  { name: "JavaScript", image: javascriptIcon, percentage: "93%" },
+  { name: "Figma", image: figmaIcon, percentage: "80%" },
+  { name: "HTML", image: sketchIcon, percentage: "80%" },
+  { name: "CSS", image: xdIcon, percentage: "85%", highlight: true },
+  { name: "WordPress", image: wordpressIcon, percentage: "85%" },
+  { name: "React", image: reactIcon, percentage: "95%" },
+  { name: "JavaScript", image: javascriptIcon, percentage: "82%" },
 ];
 
 const Skills = () => {
