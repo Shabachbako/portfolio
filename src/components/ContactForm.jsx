@@ -80,9 +80,9 @@ const ContactForm = () => {
           </p>
           <div className="social-icons">
             <a href="#"><FaFacebookF /></a>
-            <a href="#"><FaInstagram /></a>
+            <a href="https://www.instagram.com/babylee_thevoice?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><FaInstagram /></a>
             <a href="#"><FaTwitter /></a>
-            <a href="#"><FaLinkedinIn /></a>
+            <a href="https://www.linkedin.com/in/kelechi-joseph-934449340/"><FaLinkedinIn /></a>
           </div>
         </div>
       </div>

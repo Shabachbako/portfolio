@@ -34,10 +34,10 @@ const HeroSection = () => {
 
           {/* Social Icons */}
           <div className="social-icons">
+            <a href="https://www.instagram.com/babylee_thevoice?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><FaInstagram /></a>
+            <a href="https://www.linkedin.com/in/kelechi-joseph-934449340/"><FaLinkedin /></a>
             <a href="#"><FaFacebookF /></a>
-            <a href="#"><FaInstagram /></a>
             <a href="#"><FaXTwitter /></a>
-            <a href="#"><FaLinkedin /></a>
           </div>
         </div>
       </div>
