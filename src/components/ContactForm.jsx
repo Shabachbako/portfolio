@@ -25,7 +25,7 @@ const ContactForm = () => {
     setStatus("Sending...");
 
     try {
-      const response = await axios.post("http://localhost:5001/send", formData, {
+      const response = await axios.post("https://portfolio-wk5m.onrender.com/send", formData, {
         headers: {
           "Content-Type": "application/json",
         },
