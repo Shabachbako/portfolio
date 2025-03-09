@@ -128,6 +128,59 @@ form textarea {
     background: #7b28dd;
     color: #fff;
 }
+
+/* ✅ Modal Styles */
+.modal-overlay1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal1 {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modal1 h3 {
+    margin-bottom: 10px;
+    color: #7b28dd;
+  }
+  
+  .modal1 p {
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .modal1 button {
+    background: #7b28dd;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .modal1 button:hover {
+    background: #5e1bb5;
+  }
+  
+  /* ✅ Thumbs-Up Icon */
+  .thumbs-up-icon {
+    font-size: 40px;
+    color: #7b28dd;
+    margin-bottom: 10px;
+  }
+  
   
 /* Mobile Responsiveness */
 @media screen and (max-width: 768px) {

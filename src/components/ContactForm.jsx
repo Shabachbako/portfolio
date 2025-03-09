@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./ContactForm.css";
-import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaThumbsUp } from "react-icons/fa";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +13,7 @@ const ContactForm = () => {
   });
 
   const [status, setStatus] = useState("");
+  const [showModal, setShowModal] = useState(false); // ✅ Modal state
 
   // Handle Input Changes
   const handleChange = (e) => {
@@ -30,8 +31,10 @@ const ContactForm = () => {
           "Content-Type": "application/json",
         },
       });
+
       setStatus(response.data.message);
       setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" }); // Reset form
+      setShowModal(true); // ✅ Show success modal
     } catch (error) {
       console.error("Error sending message:", error);
       setStatus("Failed to send message. Please try again.");
@@ -83,6 +86,18 @@ const ContactForm = () => {
           </div>
         </div>
       </div>
+
+      {/* ✅ Success Modal */}
+      {showModal && (
+        <div className="modal-overlay1">
+          <div className="modal1">
+            <FaThumbsUp className="thumbs-up-icon" />
+            <h3>Message Sent Successfully!</h3>
+            <p>I'll get back to you as soon as possible.</p>
+            <button onClick={() => setShowModal(false)}>OK</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
