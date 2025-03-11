@@ -13,7 +13,8 @@ const ContactForm = () => {
   });
 
   const [status, setStatus] = useState("");
-  const [showModal, setShowModal] = useState(false); // ✅ Modal state
+  const [showModal, setShowModal] = useState(false);
+  const [loading, setLoading] = useState(false); // ✅ Spinner state
 
   // Handle Input Changes
   const handleChange = (e) => {
@@ -23,7 +24,8 @@ const ContactForm = () => {
   // Handle Form Submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus("Sending...");
+    setStatus("Please do not reload the page while your form is being submitted...");
+    setLoading(true); // ✅ Activate spinner
 
     try {
       const response = await axios.post("https://portfolio-wk5m.onrender.com/send", formData, {
@@ -33,11 +35,13 @@ const ContactForm = () => {
       });
 
       setStatus(response.data.message);
-      setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" }); // Reset form
-      setShowModal(true); // ✅ Show success modal
+      setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+      setShowModal(true);
     } catch (error) {
       console.error("Error sending message:", error);
       setStatus("Failed to send message. Please try again.");
+    } finally {
+      setLoading(false); // ✅ Stop spinner
     }
   };
 
@@ -59,12 +63,16 @@ const ContactForm = () => {
             <input type="email" name="email" placeholder="Email address" required value={formData.email} onChange={handleChange} style={{ color: "black" }} />
             <input type="tel" name="phone" placeholder="Phone number" required value={formData.phone} onChange={handleChange} style={{ color: "black" }} />
             <textarea name="message" placeholder="What's The Job" rows="4" required value={formData.message} onChange={handleChange} style={{ color: "black" }}></textarea>
-            <button type="submit" className="send-message-btn">
-              Send Message <span className="arrow">↗</span>
+            
+            <button type="submit" className="send-message-btn" disabled={loading}>
+              {loading ? (
+                <span className="spinner"></span> // ✅ Show spinner while loading
+              ) : (
+                <>Send Message <span className="arrow">↗</span></>
+              )}
             </button>
           </form>
 
-          {/* Status Message */}
           {status && <p className="status-message">{status}</p>}
         </div>
 
