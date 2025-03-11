@@ -1,7 +1,8 @@
 import React from "react";
 import "./HeroSection.css";
 import { FaFacebookF, FaInstagram, FaXTwitter, FaLinkedin } from "react-icons/fa6";
-import ProfileImage from "../assets/homeimage.png"; // Importing a default image
+import ProfileImage from "../assets/homeimage.png";
+import { Typewriter } from "react-simple-typewriter";
 
 const HeroSection = () => {
   // Scroll to Contact Section
@@ -22,7 +23,21 @@ const HeroSection = () => {
 
         {/* Right Side - Content */}
         <div className="hero-content">
-          <h1>Hi, I am Kelechi - Web Developer + UX Designer</h1>
+          <h1>
+            Hi, I am Kelechi -{" "}
+            <span className="typewriter">
+              <Typewriter
+                words={["Web Developer", "UX Designer", "Programmer"]} // Words to cycle
+                loop={Infinity} // Infinite loop
+                cursor
+                cursorStyle="|" // Smoother cursor
+                typeSpeed={70} // Slower typing speed for smooth effect
+                deleteSpeed={50} // Slower deletion for better flow
+                delaySpeed={2000} // Delay before switching words
+              />
+            </span>
+          </h1>
+
           <p>
             I design and code beautifully simple things and I love what I do. Just simple like that!
           </p>
