@@ -8,6 +8,7 @@
   min-height: 100vh;
   background-color: #f4efff; /* Light purple background */
   padding: 20px;
+  overflow: hidden; /* Prevents animation overflow */
 }
 
 .hero-container {
@@ -19,17 +20,21 @@
   border-radius: 20px;
   padding: 40px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
-/* Left Side - Image */
+/* Left Side - Image with Bouncing Effect */
 .hero-image {
   flex: 1;
+  position: relative;
+  animation: moveAround 8s infinite linear alternate; /* Slowed down movement */
 }
 
 .hero-image img {
   width: 100%;
   max-width: 250px;
   border-radius: 20px;
+  animation: bounce 3s infinite ease-in-out; /* Slower bounce effect */
 }
 
 /* Right Side - Content */
@@ -56,7 +61,6 @@
   font-weight: bold;
   color: #5b3cc4; /* Customize color */
 }
-
 
 /* Call to Action Button */
 .hire-button {
@@ -88,7 +92,6 @@
   color: #5b3cc4;
   font-size: 22px;
   transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
-  animation: bounce 1.5s infinite ease-in-out;
 }
 
 .social-icons a:hover {
@@ -96,13 +99,68 @@
   transform: scale(1.2);
 }
 
-/* Bouncing Animation */
+/* Smoother Bouncing Animation */
 @keyframes bounce {
   0%, 100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+  }
+}
+
+/* Slower Movement Around Four Corners */
+@keyframes moveAround {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(10px, 10px);
+  }
+  50% {
+    transform: translate(-10px, 20px);
+  }
+  75% {
+    transform: translate(20px, -10px);
+  }
+  100% {
+    transform: translate(-10px, -10px);
+  }
+}
+
+/* Light Purple Floating Bubbles */
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: rgba(183, 148, 244, 0.3); /* Light purple */
+  border-radius: 50%;
+  top: 10%;
+  left: 5%;
+  animation: floatingBubble 6s infinite ease-in-out alternate;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: rgba(183, 148, 244, 0.3);
+  border-radius: 50%;
+  bottom: 15%;
+  right: 10%;
+  animation: floatingBubble 8s infinite ease-in-out alternate-reverse;
+}
+
+@keyframes floatingBubble {
+  0% {
+    transform: scale(1) translateY(0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.2) translateY(-20px);
+    opacity: 0.6;
   }
 }
 
