@@ -84,7 +84,7 @@ const ContactForm = () => {
           <p className="contact-detail"><a href="tel:+2349166798290">+234 916 679 8290</a></p>
           <p className="contact-detail"><a href="mailto:kelechieze2000@gmail.com">kelechieze2000@gmail.com</a></p>
           <p className="contact-detail">
-            <a href="#">Warne Park Street Pine,<br />FL 33157, New York</a>
+            <a href="#">15 Ramat Crescent Ogudu,<br />Lagos Nigeria </a>
           </p>
           <div className="social-icons">
             <a href="#"><FaFacebookF /></a>
