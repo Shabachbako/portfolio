@@ -33,6 +33,7 @@ const Navbar = () => {
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
           <li><a onClick={() => scrollToSection("hero")}>Meet Me</a></li>
           <li><a onClick={() => scrollToSection("works")}>Works</a></li>
+          <li><a onClick={() => scrollToSection("portfolio")}>Portfolio</a></li>
           <li><a onClick={() => scrollToSection("achievements")}>Achievements</a></li>
           <li><a onClick={() => scrollToSection("skills")}>Skills</a></li>
           <li><a onClick={() => scrollToSection("contact")}>Contact</a></li>
