@@ -24,7 +24,7 @@ const HeroSection = () => {
         {/* Right Side - Content */}
         <div className="hero-content">
           <h1>
-            Hi, I am Kelechi -{" "}
+            Hi, I am Kelechi Eze-{" "}
             <span className="typewriter">
               <Typewriter
                 words={["Web Developer", "UX Designer", "Programmer"]} // Words to cycle
