@@ -41,17 +41,9 @@ const Navbar = () => {
           {/* Resume Button (ONLY Visible in Mobile Menu) */}
           {menuOpen && (
             <li className="mobile-resume">
-              <a href="/resume.pdf" download className="mobile-resume-button">
-                Resume ⬇
-              </a>
             </li>
           )}
         </ul>
-
-        {/* Desktop Resume Button */}
-        <a href="/resume.pdf" download className="resume-button">
-          Resume ⬇
-        </a>
       </div>
     </nav>
   );
