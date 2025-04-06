@@ -9,6 +9,7 @@ import wordpressIcon from "../assets/wp.jpg";
 import reactIcon from "../assets/react.jpg";
 import javascriptIcon from "../assets/js.jpg";
 import githubIcon from "../assets/githubb.png";
+import githubDesktopIcon from "../assets/githubdesktop.png";
 
 const skillsData = [
   { name: "Figma", image: figmaIcon, percentage: "80%" },
@@ -18,6 +19,7 @@ const skillsData = [
   { name: "React", image: reactIcon, percentage: "95%" },
   { name: "JavaScript", image: javascriptIcon, percentage: "82%" },
   { name: "Github", image: githubIcon, percentage: "97%" },
+  { name: "Github Desktop", image: githubDesktopIcon, percentage: "98%" },
 ];
 
 const Skills = () => {
