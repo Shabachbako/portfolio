@@ -5,9 +5,9 @@ import { FaTrophy, FaBriefcase, FaUsers, FaCrown } from "react-icons/fa";
 const Stats = () => {
   const statsData = [
     { icon: <FaTrophy />, value: 70, suffix: "%", label: "Job Achievements" },
-    { icon: <FaBriefcase />, value: 2, suffix: "+", label: "Years of Experience" },
-    { icon: <FaUsers />, value: 10, suffix: "", label: "Happy Clients" },
-    { icon: <FaCrown />, value: 20, suffix: "+", label: "Projects Completed" },
+    { icon: <FaBriefcase />, value: 1, suffix: "+", label: "Years of Experience" },
+    { icon: <FaUsers />, value: 5, suffix: "", label: "Happy Clients" },
+    { icon: <FaCrown />, value: 1, suffix: "+", label: "Projects Completed" },
   ];
 
   // State to track animated values
