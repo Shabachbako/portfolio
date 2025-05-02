@@ -35,6 +35,7 @@ const Navbar = () => {
           <li><a onClick={() => scrollToSection("works")}>Works</a></li>
           <li><a onClick={() => scrollToSection("portfolio")}>Portfolio</a></li>
           <li><a onClick={() => scrollToSection("achievements")}>Achievements</a></li>
+          <li><a onClick={() => scrollToSection("pricing")}>Pricing</a></li>
           <li><a onClick={() => scrollToSection("skills")}>Skills</a></li>
           <li><a onClick={() => scrollToSection("contact")}>Contact</a></li>
 

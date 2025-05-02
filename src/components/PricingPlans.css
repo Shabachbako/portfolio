@@ -1,0 +1,123 @@
+.pricing-section {
+    background-color: #0a0f2c;
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .sub-heading {
+    color: #00b3ff;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .main-heading {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  
+  .description {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    color: #ccc;
+    font-size: 16px;
+  }
+  
+  .pricing-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    background: linear-gradient(to bottom, #1f2976, #1a1a3c);
+    border-radius: 15px;
+    padding: 30px 20px;
+    width: 280px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  
+  .price {
+    font-size: 32px;
+    color: #00d9ff;
+    margin: 5px 0;
+  }
+  
+  .per-month {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 20px;
+  }
+  
+  .card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+  }
+  
+  .card li {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    margin: 8px 0;
+    gap: 10px;
+  }
+  
+  .included svg {
+    color: #00ff9f;
+  }
+  
+  .not-included svg {
+    color: #ff4e4e;
+  }
+  
+  .join-btn {
+    background: linear-gradient(90deg, #8e2de2, #4a00e0);
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 14px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .join-btn:hover {
+    background: linear-gradient(90deg, #4a00e0, #8e2de2);
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 800px) {
+    .pricing-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card {
+      width: 90%;
+      margin-bottom: 20px;
+    }
+  
+    .main-heading {
+      font-size: 24px;
+    }
+  
+    .description {
+      font-size: 14px;
+    }
+  }
+  
