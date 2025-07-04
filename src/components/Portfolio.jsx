@@ -3,7 +3,7 @@ import "./Portfolio.css";
 
 // Import images from assets (if using src/assets folder)
 import project1 from "../assets/cryptcorn.png";
-import project2 from "../assets/banqio.png";
+import project2 from "../assets/game.png";
 import project3 from "../assets/dashboard.png";
 
 const Portfolio = () => {
@@ -18,11 +18,11 @@ const Portfolio = () => {
     },
     {
       id: 2,
-      title: "BANQIO- A banking website",
+      title: "HURECTURET-GAMES A gaming website",
       date: "March 18, 2025",
       readTime: "React.Js",
       image: project2,
-      link: "https://banqio.netlify.app/",
+      link: "https://hurecturet-games.netlify.app/",
     },
     {
       id: 3,
