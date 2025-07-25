@@ -5,7 +5,7 @@ import { FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
 const plans = [
   {
     title: 'Starter',
-    price: '₦80,000',
+    price: '₦100,000',
     features: [
       { text: '1 Page Website', included: true },
       { text: 'Responsive Design', included: true },
@@ -16,7 +16,7 @@ const plans = [
   },
   {
     title: 'Professional',
-    price: '₦150,000',
+    price: '₦200,000',
     features: [
       { text: 'Up to 5 Pages', included: true },
       { text: 'Responsive Design', included: true },
@@ -27,7 +27,7 @@ const plans = [
   },
   {
     title: 'Business Pro',
-    price: '₦300,000',
+    price: '₦350,000',
     features: [
       { text: 'Up to 10 Pages', included: true },
       { text: 'Responsive Design', included: true },
